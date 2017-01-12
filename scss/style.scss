@@ -73,7 +73,7 @@ hr {
   @include bp(sm) {
     position: fixed;
     width: 100%;
-    max-width: 324px;
+    max-width: calc((100% / 4) - 3rem);
     transform: translateY(3rem);
   }
 }
@@ -148,6 +148,17 @@ header {
     }
     @include bp(xxl) {
       right: calc(47vw - 1rem);
+    }
+  }
+  .intro {
+    // @include bp(md) {
+    //   font-size: 1em;
+    // }
+    @include bp(lg) {
+      font-size: 0.85em;
+    }
+    @include bp(xxl) {
+      font-size: 1em !important;
     }
   }
 }
@@ -272,22 +283,27 @@ PERSON VIEW
 */
 .fourth-3-fourth {
   display: flex;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
   flex-direction: column;
-  @include bp(sm) {
+  @include bp(lg) {
     flex-direction: row;
   }
   > div {
     width: 100%;
-    @include bp(sm) {
+    @include bp(lg) {
       position: relative;
-      left: 8vw;
       &:first-child {
-        width: 30vw;
+        width: 25vw;
         padding-right: 3rem;
         // margin-left: calc(15% - 3rem);
       }
+      &:last-child {
+        width: 75vw;
+      }
+    }
+    @include bp(xl) {
+      left: 8vw;
       &:last-child {
         width: 50vw;
       }
@@ -302,18 +318,42 @@ PERSON VIEW
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 1rem;
-  font-size: 1.25em;
-  text-align: center;
+  // font-size: 1.25em;
+  margin-bottom: 3rem;
+  display: flex;
+  @include bp(md) {
+    font-size: 0.9em;
+  }
+  @include bp(lg) {
+    flex-direction: column;
+    text-align: center;
+  }
+  @include bp(xl) {
+    font-size: 1.25em;
+  }
+  > div:first-child {
+    margin-right: 1rem;
+    flex-shrink: 0;
+    @include bp(lg) {
+      margin-right: 0;
+    }
+  }
   img {
-    max-width: 250px;
+    max-width: 100px;
     border-radius: 50%;
     border: 1px solid #ccc;
     margin: 0 auto 1rem;
+    @include bp(md) {
+      max-width: 200px;
+    }
   }
   h2 {
     color: $brand;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 1.5em;
+    @include bp(md) {
+      font-size: 2em;
+    }
   }
   strong {
     display: block;
@@ -326,12 +366,26 @@ PERSON VIEW
     font-size: 0.85em;
     padding: 0.5rem 1rem;
     text-decoration: none;
+    transition: all 200ms ease-out;
     &:before {
-      content: '';
+      content: url(https://octiv.com/wp-content/uploads/2016/07/twitter.png);
+      filter: brightness(300%);
       display: inline-block;
-      margin-right: 20px;
+      margin-right: 10px;
       width: 20px;
       height: 20px;
+      position: relative;
+      top: 4px;
+    }
+    &:hover, &:focus {
+      background-color: lighten(#01ABF0, 15%);
     }
   }
+}
+
+.callout {
+  background-image: linear-gradient(#f0f0f0,#fff);
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
