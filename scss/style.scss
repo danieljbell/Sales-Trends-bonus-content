@@ -69,6 +69,15 @@ hr {
   border-top: 1px solid #ccc;
 }
 
+.stuck .box {
+  @include bp(sm) {
+    position: fixed;
+    width: 100%;
+    max-width: 324px;
+    transform: translateY(3rem);
+  }
+}
+
 /*
 ==============================
 COVER PAGE
@@ -272,19 +281,23 @@ PERSON VIEW
   > div {
     width: 100%;
     @include bp(sm) {
+      position: relative;
+      left: 8vw;
       &:first-child {
-        width: 25%;
+        width: 30vw;
         padding-right: 3rem;
-        margin-left: calc(15% - 3rem);
+        // margin-left: calc(15% - 3rem);
       }
       &:last-child {
-        width: 50%;
+        width: 50vw;
       }
     }
   }
 }
 
 .box {
+  position: relative;
+  top: 0;
   background-image: linear-gradient(#fff, #f0f0f0);
   border: 1px solid #ccc;
   border-radius: 5px;

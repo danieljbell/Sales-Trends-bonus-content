@@ -71,6 +71,13 @@ p {
 hr {
   border-top: 1px solid #ccc; }
 
+@media (min-width: 600px) {
+  .stuck .box {
+    position: fixed;
+    width: 100%;
+    max-width: 324px;
+    transform: translateY(3rem); } }
+
 /*
 ==============================
 COVER PAGE
@@ -249,14 +256,18 @@ PERSON VIEW
   .fourth-3-fourth > div {
     width: 100%; }
     @media (min-width: 600px) {
-      .fourth-3-fourth > div:first-child {
-        width: 25%;
-        padding-right: 3rem;
-        margin-left: calc(15% - 3rem); }
-      .fourth-3-fourth > div:last-child {
-        width: 50%; } }
+      .fourth-3-fourth > div {
+        position: relative;
+        left: 8vw; }
+        .fourth-3-fourth > div:first-child {
+          width: 30vw;
+          padding-right: 3rem; }
+        .fourth-3-fourth > div:last-child {
+          width: 50vw; } }
 
 .box {
+  position: relative;
+  top: 0;
   background-image: linear-gradient(#fff, #f0f0f0);
   border: 1px solid #ccc;
   border-radius: 5px;
