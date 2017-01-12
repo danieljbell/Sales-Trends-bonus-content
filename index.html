@@ -140,27 +140,18 @@
     contentSections.forEach(function(section) {
       if (window.scrollY > section.offsetTop) {
         section.classList.add('stuck');
-        if (window.scrollY > (section.offsetHeight + section.querySelector('.box').offsetHeight)) {
-          console.log('trigger');
+        var stickyBox = section.querySelector('.box');
+        if (window.scrollY > (section.offsetTop + section.offsetHeight - stickyBox.offsetHeight - (60 + 54))) {
+          stickyBox.style.transform = 'transateY(' + (window.scrollY - section.offsetHeight) + 'px)';
+          // console.dir(stickyBox.style.transform = 'translateY(' + (window.scrollY - (section.offsetHeight)) + (200 - 54) + 'px)');
         }
       } else {
-        section.classList.remove('stuck');
-      }
-      if (window.scrollY > (section.offsetTop + section.offsetHeight)) {
         section.classList.remove('stuck');
       }
     });
   });
 
 })();
-
-// function ready(init) {
-//   if (document.readyState != 'loading'){
-//     init();
-//   } else {
-//     document.addEventListener('DOMContentLoaded', init);
-//   }
-// }
 </script>
 </body>
 </html>
