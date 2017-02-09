@@ -159,42 +159,207 @@
     <h2>Interested in Hearing Trends from Other Sales Leaders?</h2>
     <p>Fill out the form below to get 17 more trends!</p>
     <div style="max-width: 600px; margin: 0 auto;">
-      <iframe src="https://go.pardot.com/l/18292/2016-11-30/6fvdlh" frameborder="0" width="100%" height="675"></iframe>
+      <script src="//app-sj20.marketo.com/js/forms2/js/forms2.min.js"></script>
+  		<form id="mktoForm_1041"></form>
+  		<script>
+  			MktoForms2.loadForm("//app-sj20.marketo.com", "625-MXY-689", 1041, function(form) {
+  				// Blacklisted Email Domains
+  				var invalidDomains = ["@gmail.","@yahoo.","@hotmail.","@live.","@aol.","@outlook."];
+
+  					//Add an onSuccess handler
+  					form.onValidate(function(values, followUpUrl) {
+
+  						// Verify Email is Business Domain
+  						var email = form.vals().Email;
+  						if(email){
+  							if(!isEmailGood(email)) {
+  								form.submitable(false);
+  								var emailElem = form.getFormElem().find("#Email");
+  								form.showErrorMessage("Must be Business email.", emailElem);
+  							} else {
+  								// Get the form field values
+  								var vals = form.vals();
+
+                  // Assign the redirection
+                  followUpUrl = 'http://go.octiv.com/proposals/create_and_view?api_key=08cd2775273e71f701f517da229a1006f1f143ac&amp;proposal[template_id]=32543&amp;proposal[name]=17%20Sales%20Trends%20for%202017%20for%20' + vals.Company + '&amp;first_name=' + vals.FirstName + '&amp;last_name=' + vals.LastName;
+
+  								// Redirect the page with form field
+  								location.href = followUpUrl;
+
+  								// Return false to prevent the submission handler continuing with its own processing
+  								return false;
+  								form.submitable(true);
+  							}
+
+  							function isEmailGood(email) {
+  						    for(var i=0; i < invalidDomains.length; i++) {
+  						      var domain = invalidDomains[i];
+  						      if (email.indexOf(domain) != -1) {
+  						        return false;
+  						      }
+  						    }
+  						    return true;
+  						  }
+  						}
+
+  					});
+  			});
+  		</script>
     </div>
   </div>
 </div>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body,html{font-family:Source Sans Pro,Helvetica,Arial,sans-serif;font-size:18px;font-weight:300;line-height:1.3}img,svg{width:100%;display:block}.site-width{width:100%;padding:0 25px;margin:0 auto}h3{font-size:2.2em;margin-bottom:1rem}h4{font-size:1.4em;line-height:1;color:#ed4c06}ul{list-style-type:none}p{margin-bottom:1rem;line-height:1.4}hr{border-top:1px solid #ccc}header{color:#fff;background-color:#42b0d8;font-size:1.1em;line-height:1.4;padding-top:3rem;padding-bottom:3rem}header svg{max-width:50px}header .logo-container{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-ms-flex-align:center;align-items:center;margin-bottom:1rem}header .logo-container span{display:inline-block;border-left:1px solid #fff;margin-right:1rem}header .logo-container span span{position:relative;top:-3px;font-size:medium;border-left:0;padding-left:1rem;text-shadow:1px 1px 2px rgba(0,0,0,.25)}header .logo{display:inline-block;max-width:200px;fill:#fff;margin-right:1rem;-webkit-filter:drop-shadow(2px 2px 4px rgba(0,0,0,.25));filter:drop-shadow(2px 2px 4px rgba(0,0,0,.25))}header .bonus-flag{display:none;font-size:18px;background-color:#ed4c06;position:absolute;top:3vh;right:-3rem;width:350px;-webkit-transform:rotate(30deg);-ms-transform:rotate(30deg);transform:rotate(30deg);text-align:center;color:#fff;padding:1em 0}header .site-width{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}header .site-width>div:first-child{padding-bottom:3rem}header h1{position:relative;z-index:2;text-shadow:3px 3px 6px rgba(0,0,0,.25);font-size:2.2em;line-height:1;margin-bottom:2rem}.big-number{color:#000;opacity:.2;position:absolute;z-index:-1;right:0;font-size:3em;letter-spacing:-25px;top:-35px}.heading-sub{font-weight:300;display:block;font-size:.75em}.arrow{display:none}.image-collage{position:relative;display:none;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;height:100vh;min-height:100vh}.image-collage div{box-shadow:inset 0 0 50px rgba(0,0,0,.85);background-size:cover;background-position:50%;height:12.5vh;width:15vw}.fourth-3-fourth{display:-webkit-flex;display:-ms-flexbox;display:flex;padding-top:3rem!important;padding-bottom:3rem!important;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.fourth-3-fourth>div{width:100%}.box{position:relative;top:0;background-image:linear-gradient(#fff,#f0f0f0);border:1px solid #ccc;border-radius:5px;padding:1rem;margin-bottom:3rem;display:-webkit-flex;display:-ms-flexbox;display:flex}.box>div:first-child{margin-right:1rem;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0}.box img{max-width:100px;border-radius:50%;border:1px solid #ccc;margin:0 auto 1rem}.box h2{color:#ed4c06;text-transform:uppercase;font-size:1.5em}.box strong{display:block}.box a{background-color:#01abf0;border-radius:3px;color:#fff;font-weight:300;font-size:.85em;padding:.5rem 1rem;text-decoration:none;transition:all .2s ease-out}.box a:before{content:url(https://octiv.com/wp-content/uploads/2016/07/twitter.png);-webkit-filter:brightness(300%);filter:brightness(300%);display:inline-block;margin-right:10px;width:20px;height:20px;position:relative;top:4px}.box a:focus,.box a:hover{background-color:#3fc7fe}.callout{background-image:linear-gradient(#f0f0f0,#fff);text-align:center;padding-top:3rem;padding-bottom:3rem}@media (min-width:600px){body,html{font-size:20px}.site-width{padding:0 50px}.stuck .box{position:fixed;width:100%;max-width:calc(25% - 3rem);-webkit-transform:translateY(3rem);-ms-transform:translateY(3rem);transform:translateY(3rem)}header .bonus-flag{display:block}header .site-width>div:first-child{padding-bottom:0}}@media (min-width:1440px){.site-width{padding:0 100px}header{padding-top:100px}header .bonus-flag{right:calc(47vw - 1rem)}header .intro{font-size:1em!important}header .site-width>div:first-child{padding-right:200px}.arrow{bottom:3rem}.image-collage{left:50%}.image-collage div{width:25vw}}@media (min-width:960px){header{min-height:100vh;font-size:1.5em;line-height:1.5;padding-top:50px}header .bonus-flag{right:calc(35vw - 1rem)}header .intro{font-size:.85em}header .site-width{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}header .site-width>div{width:50vw}header h1{font-size:2em;margin-bottom:4rem}.arrow{display:block;bottom:2rem;left:25%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}.arrow,.image-collage{position:absolute}.image-collage{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;top:0;left:60vw}.image-collage div{height:12.5vh;width:20vw}.fourth-3-fourth{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}.fourth-3-fourth>div{position:relative}.fourth-3-fourth>div:first-child{width:25vw;padding-right:3rem}.fourth-3-fourth>div:last-child{width:75vw}.box{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;text-align:center}.box>div:first-child{margin-right:0}}@media (min-width:1280px){header h1{font-size:3em}.big-number{font-size:3.5em;letter-spacing:-50px;top:-100px}.fourth-3-fourth>div{left:8vw}.fourth-3-fourth>div:last-child{width:50vw}.box{font-size:1.25em}}@media (min-width:769px){.box{font-size:.9em}.box img{max-width:200px}.box h2{font-size:2em}}
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+	width: 100%;
+	padding: 0.5rem;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	color: #000;
+}
+
+button[type='submit'] {
+  display: block;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	transition: all 200ms ease-out;
+  background-color: #ed4c06;
+	color: #fff;
+  border: 0;
+}
+
+input[type='checkbox'] {
+	margin-right: 0.5rem;
+}
+
+select {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: 95%;
+	background-size: 20px;
+}
+
+.mktoLabel {
+	display: block;
+}
+
+.mktoAsterix {
+	display: inline-block;
+	color: #ed4c06;
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+.mktoLabel {
+	font-weight: bold;
+	font-size: 0.85em;
+}
+
+.mktoError {
+	top: 0rem !important;
+	right: 0 !important;
+	bottom: 0 !important;
+  position: absolute;
+  color: red;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.mktoErrorDetail {
+	font-style: italic;
+}
+
+.mktoFieldWrap {
+  position: relative;
+}
+
 </style>
 
-<!-- <script>
-(function() {
+<script>
+if (window.MktoForms2) {
+  MktoForms2.whenReady(function (form) {
+    var pageURL = document.documentURI;
+    var formObj = document.querySelector('.mktoForm');
 
-  var contentSections = document.querySelectorAll('.fourth-3-fourth');
+    // Remove Initial Styles
+    removeInitialStyles(formObj);
 
-  window.addEventListener('resize', function() {
-    contentSections = document.querySelectorAll('.fourth-3-fourth');
-  });
+    // Remove Inline Width Styles
+    removeStyles(formObj);
 
-  window.addEventListener('scroll', function() {
-    contentSections.forEach(function(section) {
-      if (window.scrollY > section.offsetTop) {
-        section.classList.add('stuck');
-        var stickyBox = section.querySelector('.box');
-        if (window.scrollY > (section.offsetTop + section.offsetHeight - stickyBox.offsetHeight - 150)) {
-          stickyBox.style.transform = 'translateY(' + -(window.scrollY - section.offsetHeight - stickyBox.offsetHeight + 75) + 'px)';
-        } else {
-          stickyBox.style.transform = '';
-        }
-      } else {
-        section.classList.remove('stuck');
-      }
+    // Remove Inline Width Styles on Resize
+    window.addEventListener('resize', function() {
+      removeStyles(formObj);
     });
-  });
 
-})();
-</script> -->
+    // Send page URL to Marketo
+    // $('input[name="sourceURL"]').attr('value', pageURL);
+    document.querySelector('input[name="sourceURL"]').value = pageURL;
+    // $('input[name="LeadSource"]').attr('value', 'Web');
+    document.querySelector('input[name="LeadSource"]').value = 'Web';
+
+    function removeInitialStyles(formObj) {
+      // $('#mktoForms2BaseStyle').remove();
+      document.querySelector('#mktoForms2BaseStyle').remove();
+
+      // $('#mktoForms2ThemeStyle').remove();
+      document.querySelector('#mktoForms2ThemeStyle').remove();
+
+      // formObj.find('.mktoOffset').remove();
+      var mktoOffset = formObj.querySelectorAll('.mktoOffset');
+      for (var i = 0; i < mktoOffset.length; i++) {
+        mktoOffset[i].remove();
+      }
+
+      // formObj.find('.mktoGutter').remove();
+      var mktoGutter = formObj.querySelectorAll('.mktoGutter');
+      for (var i = 0; i < mktoGutter.length; i++) {
+        mktoGutter[i].remove();
+      }
+
+      // formObj.find('.mktoClear').remove();
+      var mktoClear = formObj.querySelectorAll('.mktoClear');
+      for (var i = 0; i < mktoClear.length; i++) {
+        mktoClear[i].remove();
+      }
+
+      // formObj.attr('style', '');
+      formObj.attributes[3].nodeValue = '';
+
+      // formObj.find('style').remove();
+      var mktoStyle = formObj.querySelector('style');
+      mktoStyle.remove();
+
+      // formObj.find('.mktoButtonWrap').attr('style', '').parent('.mktoButtonRow').addClass('centered');
+      var mktoButtonWrap = formObj.querySelector('.mktoButtonWrap');
+      mktoButtonWrap.style.marginLeft = '';
+
+      // formObj.find('.mktoInset').attr('style', '');
+      var mktoInset = formObj.querySelector('.mktoInset');
+    }
+
+    function removeStyles(formObj) {
+      // formObj.find('.mktoHasWidth').attr('style', '');
+      var mktoHasWidth = document.querySelectorAll('.mktoHasWidth');
+      for (var i = 0; i < mktoHasWidth.length; i++) {
+        mktoHasWidth[i].style.width = '';
+      }
+    }
+  });
+}
+</script>
 
 <!-- Google Analytics -->
 <script>
@@ -205,18 +370,26 @@
 <!-- END Google Analytics -->
 
 <script type="text/javascript">
-	piAId = '19292';
-	piCId = '7291';
-
-	(function() {
-		function async_load(){
-			var s = document.createElement('script'); s.type = 'text/javascript';
-			s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
-			var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
-		}
-		if(window.attachEvent) { window.attachEvent('onload', async_load); }
-		else { window.addEventListener('load', async_load, false); }
-	})();
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('625-MXY-689');
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
 </script>
 
 </body>
